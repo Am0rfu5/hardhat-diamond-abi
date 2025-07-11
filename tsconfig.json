@@ -7,5 +7,9 @@
     "outDir": ".",
     "composite": true
   },
-  "files": ["package.json"]
+  "files": [
+    "dist/",
+    "README.md",
+    "package.json"
+  ]
 }
