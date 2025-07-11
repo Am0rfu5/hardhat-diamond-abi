@@ -1,7 +1,7 @@
 import * as path from "path";
 import { createHash } from "crypto";
 import debug from "debug";
-import { utils } from "ethers";
+import { Fragment } from "ethers";
 import { TASK_COMPILE_SOLIDITY_COMPILE_JOBS } from "hardhat/builtin-tasks/task-names";
 import { extendConfig, subtask } from "hardhat/config";
 import { HardhatPluginError } from "hardhat/plugins";
@@ -24,8 +24,6 @@ export const PLUGIN_VERSION = pkg.version;
 // An empty contract file is provided in the plugin otherwise Hardhat will eject us from the cache
 export const CONTRACT_PATH = path.join(__dirname, "contract.sol");
 const CONTRACT_NAME = "HardhatDiamondABI.sol";
-
-const { Fragment, FormatTypes } = utils;
 
 const log = debug(PLUGIN_NAME);
 
@@ -252,7 +250,7 @@ export async function generateDiamondAbi(
       const diamondAbiSet = new Set();
 
       mergedAbis.forEach((abi) => {
-        const sighash = Fragment.fromObject(abi).format(FormatTypes.sighash);
+        const sighash = Fragment.from(abi).format("sighash");
         if (diamondAbiSet.has(sighash)) {
           throw new HardhatPluginError(
             PLUGIN_NAME,

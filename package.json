@@ -2,11 +2,14 @@
   "name": "hardhat-diamond-abi",
   "version": "3.0.1",
   "description": "Hardhat plugin to combine multiple ABIs into a Diamond ABI artifact.",
-  "author": "Blaine Bublitz <blaine.bublitz@gmail.com> (https://github.com/phated)",
-  "repository": "projectsophon/hardhat-diamond-abi",
+  "authors": [
+    "Am0rfu5 (https://github.com/Am0rfu5)",
+    "Blaine Bublitz <blaine.bublitz@gmail.com> (https://github.com/phated)"
+  ],
+  "repository": "Am0rfu5/hardhat-diamond-abi",
   "license": "GPL-3.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,10 +30,10 @@
   },
   "dependencies": {
     "debug": "^4.3.3",
-    "ethers": "^5.5.2"
+    "ethers": "^6.15.0"
   },
   "peerDependencies": {
-    "hardhat": "^2.0.0"
+    "hardhat": "^2.22.0"
   },
   "devDependencies": {
     "@projectsophon/eslint-config": "0.0.2",
@@ -43,7 +46,7 @@
     "chai": "^4.2.0",
     "cpy-cli": "3.1.1",
     "eslint": "^7.25.0",
-    "hardhat": "^2.0.0",
+    "hardhat": "^2.22.0",
     "mocha": "^8.0.1",
     "prettier": "^2.2.1",
     "ts-node": "^8.1.0",
@@ -61,5 +64,6 @@
     "eip-2535",
     "hardhat",
     "hardhat-plugin"
-  ]
+  ],
+  "packageManager": "yarn@4.6.0"
 }
